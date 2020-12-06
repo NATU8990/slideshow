@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+}
+
+.banner {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner::after {
+    content: '';
+    width: 250%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #000, #000);
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation: bannerAmin 3s linear forwards;
+}
+
+@keyframes bannerAmin {
+    0% {right: 0}
+    100%{right: -250%}
+}
+
+.banner h1 {
+    color: #fff;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 50px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding: 50px 25px;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px #fff;
+}
+
+span.br {
+    display: inline-block;
+}
+
+.banner button {
+    width: 180px;
+    padding: 10px;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    transform: perspective(500px) rotateY(-15deg);
+    cursor: pointer;
+    animation: buttonAmin 1s 2.5s backwards;
+    transition: all 0.5s;
+}
+
+.banner button:hover {
+    transform: perspective(500px) rotateY(15deg);
+}
+
+@keyframes buttonAmin {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+
+.slideshow-wrapper {
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s;
+}
+
+.slideshow{
+    display: flex;
+    width: 400%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes slideshow {
+    0% {left: 0}
+    10% {left: 0}
+    15% {left: -100%}
+    25% {left: -100%}
+    30% {left: -200%}
+    40% {left: -200%}
+    45% {left: -300%}
+    55% {left: -300%}
+    60% {left: -200%}
+    70% {left: -200%}
+    75% {left: -100%}
+    85% {left: -100%}
+    90% {left: 0}
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, .6);
+    padding: 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 500px;
+    position: relative;
+    top: 35%;
+    left: 5%;
+}
+
+.slide:nth-child(1) {
+    background: url(images/tokyo.jpg) center no-repeat;
+    background-size: cover;
+ }
+
+.slide:nth-child(2) {
+    background: url(images/osaka.jpg) center no-repeat;
+    background-size: cover;
+ }
+
+.slide:nth-child(3) {
+    background: url(images/kyoto.jpg) center no-repeat;
+    background-size: cover;
+ }
+
+.slide:nth-child(4) {
+    background: url(images/hiroshima.jpg) center no-repeat;
+    background-size: cover;
+ }
+
+
+.content h3 {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 60px;
+    color: #fff;
+}
+
+.content p {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20px;
+    color: #ccc;
+    line-height: 2;
+}
+
+.content button {
+    width: 100px;
+    padding: 10px 10px 5px 5px;
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #fff;
+    text-align: end;
+    cursor: pointer;
+}
+
+content i {
+    margin-right: 8px;
+}
+
+@media (max-width: 700px) {
+    .banner h1 {
+        font-size: 30px;
+        padding: 20px 5px;
+    }
+    
+    .banner button {
+        width: 110px;
+        font-size: 10px;
+        padding: 10px 5px;
+    }
+    
+    .content {
+        width: 230px;
+        top: 10%;
+        padding: 30px 10px;
+    }
+    
+    
+    .content h3 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+    
+    .content p {
+        font-size: 15px;
+    }
+    
+    .content button {
+        font-size: 15px;
+        width: 70px;
+    }
+    
+}
